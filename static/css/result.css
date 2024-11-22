@@ -1,0 +1,102 @@
+.result-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.result-header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.prediction-card {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.final-prediction {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.prediction-high-risk {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+    border: 2px solid #ffcdd2;
+}
+
+.prediction-low-risk {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #c8e6c9;
+}
+
+.model-predictions {
+    list-style: none;
+    padding: 0;
+}
+
+.model-prediction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.model-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.prediction-value {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.back-button {
+    display: block;
+    width: 200px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .result-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .model-prediction-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .prediction-value {
+        margin-top: 0.5rem;
+    }
+} 
