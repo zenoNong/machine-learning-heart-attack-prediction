@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Heart Disease Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Prediction Result</h1>
-        <p><strong>Final Prediction:</strong> {{ final_prediction }}</p>
-        <h2>Individual Model Predictions</h2>
-        <ul>
-            {% for model, prediction in individual_predictions.items() %}
-                <li>{{ model }}: {{ prediction }}</li>
-            {% endfor %}
-        </ul>
-        <a href="/">Back to Form</a>
+    <div class="result-container">
+        <h1 class="result-header">Heart Disease Prediction Result</h1>
+        
+        <div class="prediction-card">
+            <div class="final-prediction {{ 'prediction-high-risk' if final_prediction == 1 else 'prediction-low-risk' }}">
+                <h2>Final Prediction</h2>
+                <p>{{ "High Risk" if final_prediction == 1 else "Low Risk" }}</p>
+            </div>
+
+            <h3>Individual Model Predictions</h3>
+            <ul class="model-predictions">
+                {% for model, prediction in individual_predictions.items() %}
+                <li class="model-prediction-item">
+                    <span class="model-name">{{ model }}</span>
+                    <span class="prediction-value {{ 'prediction-high-risk' if prediction == 1 else 'prediction-low-risk' }}">
+                        {{ "High Risk" if prediction == 1 else "Low Risk" }}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <a href="/" class="back-button">Back to Form</a>
     </div>
 </body>
 </html>
